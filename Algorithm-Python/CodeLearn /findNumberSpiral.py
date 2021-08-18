@@ -1,0 +1,1 @@
+def findNumberSpiral(x, y):
