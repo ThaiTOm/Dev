@@ -29,7 +29,6 @@ centroids = {
     for i in range(3)
 }
 
-
 plt.scatter(x_data, y_data)
 
 
