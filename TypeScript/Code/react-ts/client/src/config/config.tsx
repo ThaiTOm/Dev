@@ -11,3 +11,4 @@ const config: object = {
         url: "http://locahost/2704"
     }
 }
+export default config
