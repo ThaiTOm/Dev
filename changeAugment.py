@@ -662,13 +662,12 @@ class Albumentations:
                 A.MedianBlur(p=0.01),
                 A.ToGray(p=0.00),
                 A.CLAHE(p=0.01),
-                A.RandomBrightnessContrast(p=0.0),
-                A.RandomGamma(p=0.0),
-                A.Normalize(),
                 A.RandomBrightnessContrast(brightness_limit=0.02, contrast_limit=0.02, brightness_by_max=True, always_apply=False, p=0.2),
-                A.RandomFog (fog_coef_lower=0.03, fog_coef_upper=1, alpha_coef=0.08, always_apply=False, p=0.2),
-                A.RandomGamma (gamma_limit=(30, 50), eps=None, always_apply=False, p=0.2),
-                A.GaussNoise (var_limit=(10.0, 50.0), mean=0, per_channel=True, always_apply=False, p=0.6),
+                A.RandomGamma(p=0.1),
+                A.RandomFog(p=0.1),
+                A.GaussNoise(p=0.1),
+                A.CenterCrop(p=0.01),
+
                 A.ImageCompression(quality_lower=75, p=0.0)]  # transforms
             self.transform = A.Compose(T, bbox_params=A.BboxParams(format='yolo', label_fields=['class_labels']))
 
